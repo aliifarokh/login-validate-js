@@ -1,0 +1,229 @@
+@font-face {
+    font-family: ali;
+    src: url(../font/josefin/JosefinSans-VariableFont_wght.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    font-family: ali;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ecf0f3;
+
+    >section {
+        width: 70%;
+        height: 600px;
+        /* border: 2px solid red; */
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 7px 3px 24px 0px rgba(0, 0, 0, 0.75);
+
+        >* {
+            height: 100%;
+            /* border: 2px solid black; */
+        }
+
+        >.choice {
+            width: 40%;
+            display: flex;
+            position: relative;
+            transition: .7s linear;
+            z-index: 99;
+            box-shadow: 5px 0;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+            background-color: #ecf0f3;
+            >div {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-content: center;
+                transition: .7s linear;
+                /* border: 2px solid rgb(7, 236, 64); */
+                background-color: #ecf0f3;
+
+                >h1 {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-transform: capitalize;
+                    font-size: 40px;
+                    padding: 10px;
+                }
+
+                >p {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-transform: capitalize;
+                    font-size: 16px;
+                    color: #a5aaaa;
+                    padding: 10px 20px;
+                    text-align: center;
+                    margin: 20px 0;
+                }
+
+                >button {
+                    /* padding: 20px 40px; */
+                    background-color: #4b70e2;
+                    border-radius: 30px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: white;
+                    text-transform: uppercase;
+                    font-size: 18px;
+                    width: 170px;
+                    height: 50px;
+                    border: none;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        >.sign {
+            width: 60%;
+            transition: .7s linear;
+            background-color: #ecf0f3;
+            position: relative;
+
+            >div {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-content: center;
+                transition: .7s linear;
+                /* border: 2px solid rgb(7, 236, 64); */
+                background-color: #ecf0f3;
+
+                >h1 {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-transform: capitalize;
+                    font-size: 40px;
+                    padding: 10px;
+                    margin: 10px 0;
+                }
+
+                >.icons {
+                    width: 30%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin: 10px 0;
+
+                    >span {
+                        
+                        >i {
+                            font-size: 30px;
+                            color: #767879;
+                            transition: .4s;
+                            &:hover{
+                                color: black;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+
+                }
+
+                >p {
+                    width: 85%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 16px;
+                    color: #a5aaaa;
+                    padding: 10px 20px;
+                    text-align: center;
+                    margin: 20px 0;
+                }
+                >.forgot{
+                    width: 40%;
+                    height: 35px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-bottom: 1px solid black;
+                    font-size: 16px;
+                }
+
+                >form {
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    align-content: center;
+
+                    span{
+                        width: 80%;
+                        color: red;
+                        font-size: 15px;
+                        text-transform: uppercase;
+                        font-weight: 600;
+                    }
+
+                    >input {
+                        width: 80%;
+                        height: 45px;
+                        padding: 0 0 0 20px;
+                        margin: 5px 0;
+                        border-radius: 10px;
+                        border: none;
+                        outline: none;
+                        box-shadow: inset 2px 2px 3px 0px rgba(0, 0, 0, 0.164);
+                        background-color: #ecf0f3;
+                        font-size: 16px;
+                        
+                    }
+
+                    >button {
+                        /* padding: 20px 40px; */
+                        background-color: #4b70e2;
+                        border-radius: 30px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color: white;
+                        text-transform: uppercase;
+                        font-size: 18px;
+                        width: 170px;
+                        height: 50px;
+                        border: none;
+                        cursor: pointer;
+                        margin: 40px 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.none {
+    visibility: hidden;
+    opacity: 0;
+    /* display: none; */
+}

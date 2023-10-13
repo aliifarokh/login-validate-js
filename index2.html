@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index2</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/master.css">
+</head>
+
+<body>
+    <main>
+        <section id="sect">
+            <div class="choice">
+                <div id="right">
+                    <h1>hello friend !</h1>
+                    <p>Enter your personal details and start journey with us</p>
+                    <button id="gtl">sign up</button>
+                </div>
+                <div id="left">
+                    <h1>welcome back !</h1>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <button id="gtr">sign in</button>
+                </div>
+            </div>
+            <div class="sign">
+                <div id="fright">
+                    <h1>creat account</h1>
+                    <div class="icons">
+                        <span><i class="bi bi-facebook"></i></span>
+                        <span><i class="bi bi-linkedin"></i></span>
+                        <span><i class="bi bi-twitter"></i></span>
+                    </div>
+                    <p>or use email for registration</p>
+                    <form action="reg.php" name="reg" onsubmit="myVal(event)">
+                        <input type="text" id="" placeholder="Name">
+                        <input type="text" id="email1" placeholder="email">
+                        <span id="emailErr"></span>
+                        <input id="pass1" type="password" oninput="checkPass(event)" placeholder="password">
+                        <span id="passErr"></span>
+                        <button>sign up</button>
+                    </form>
+                </div>
+                <div id="fleft">
+                    <h1>sign in to website</h1>
+                    <div class="icons">
+                        <span><i class="bi bi-facebook"></i></span>
+                        <span><i class="bi bi-linkedin"></i></span>
+                        <span><i class="bi bi-twitter"></i></span>
+                    </div>
+                    <p>or use email for registration</p>
+                    <form action="reg.php2" name="reg2">
+                        <input type="text" id="email2" placeholder="email">
+                        <input type="password" id="pass2" placeholder="password">
+                        <button>sign in</button>
+                    </form>
+                    <span class="forgot">Forgot your password?</span>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+<script>
+
+
+
+    let myErr = 0
+
+    function myVal(e) {
+        myErr = 0
+        // e.preventDefault()
+
+        let email1 = document.getElementById('email1').value
+        let email2 = document.getElementById('email2').value
+        let pass1 = document.getElementById('pass1').value
+        let pass2 = document.getElementById('pass2').value
+
+        if (
+            email1.search(/script/) == -1
+        ) {
+            if (
+                email1.search(/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/)
+            ) {
+                document.getElementById("emailErr").innerText = "Invalid Email";
+                myErr++
+            } else {
+                
+            }
+        } else {
+            document.getElementById("emailErr").innerText = "Invalid Email";
+            e.preventDefault()
+            if (myErr > 0) {
+                e.preventDefault()
+            }
+
+
+        }
+    }
+
+    let span = document.getElementById('passErr')
+    console.log(span);
+    
+    function checkPass(e) {
+        let flag = 0
+        myErr = 0
+        if (
+            (e.target.value.search(/[!@#$%^&*()]/)) >= 0
+        ) {
+            flag++
+        } if (
+            (e.target.value.search(/[a-z]/i)) >= 0
+        ) {
+            flag++
+        } if (
+            (e.target.value.search(/[0-9]/i)) >= 0
+        ) {
+            flag++
+        }
+        if (
+            e.target.value.length > 8
+        ) {
+            flag++
+        }
+
+
+        // **************
+
+        switch (flag) {
+            case 1: span.innerHTML = 'weak';span.style.color = 'red'; myErr++; break;
+            case 2: span.innerHTML = 'normal';span.style.color = 'blue'; myErr++; break;
+            case 3: span.innerHTML = 'good';span.style.color = 'green'; break;
+            case 4: span.innerHTML = 'very good';span.style.color = 'green'; break;
+        }
+
+    }
+
+
+
+
+
+
+
+    let right = document.getElementById('right')
+    let left = document.getElementById('left')
+    let gtr = document.getElementById('gtr')
+    let gtl = document.getElementById('gtl')
+    let fright = document.getElementById('fright')
+    let fleft = document.getElementById('fleft')
+    let choice = document.getElementsByClassName('choice')[0]
+    let sign = document.getElementsByClassName('sign')[0]
+    let sect = document.getElementById('sect')
+    right.classList.add('none')
+    fleft.classList.add('none')
+    let w = sect.clientWidth
+
+    gtr.addEventListener('click', () => {
+        right.classList.remove('none')
+        left.classList.add('none')
+        fleft.classList.remove('none')
+        fright.classList.add('none')
+        choice.style.transform = 'translateX(' + (w * 0.6) + 'px)'
+        sign.style.transform = 'translateX(-' + (w * 0.4) + 'px)'
+    })
+
+    gtl.addEventListener('click', () => {
+        left.classList.remove('none')
+        right.classList.add('none')
+        fright.classList.remove('none')
+        fleft.classList.add('none')
+        choice.style.transform = 'translateX(0px)'
+        sign.style.transform = 'translateX(0px)'
+    })
+
+
+</script>
+
+</html>
